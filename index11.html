@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHENGANNUR CHITTS PVT LIMITED</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="st2.css" />
+</head>
+<body>
+  <br>
+  <h1>CHENGANNUR CHITTS</h1>
+  <h3>COLLECTION SHEET</h3>
+
+  <button type="button" class="logout-button pointer" style="color:rgb(255, 144, 144)" onclick="logout()"> <i class="fas fa-sign-out-alt"></i>LOGOUT</button>
+ 
+ 
+  <div class="container">
+   
+    <form method="post" action="" name="contact-form">
+      <div class="inp-wrapper">
+        <div class="amount-wrapper">
+          <label for="branchName">Branch Name:</label>
+          <p name="branchName" id="branchName"></p>
+          <input type="hidden" name="branchName" id="hiddenBranchName" />
+        </div>
+        <div class="amount-wrapper">
+          <label for="Deposited">Staff Name:</label>
+          <input type="text" name="Deposited" id="Deposited" placeholder="BANK DEPOSITED BY" style="text-transform:uppercase" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="date-1">Bank Deposite Date</label>
+          <input type="date" name="Bank Deposite Date" id="date-1" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="date-2">Recipt Date</label>
+          <input type="date" name="recipt-date" id="date-2" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="name">Customer Name</label>
+          <input type="text" name="customer-name" id="cust-name" required />
+        </div>
+      </div>
+      <br>
+      <div class="inp-wrapper">
+        <div class="amount-wrapper">
+          <label for="chit-num">Chity Number</label>
+          <input type="text" name="chit-number" id="chit-num" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="chi-int">Chitty Instalment</label>
+          <input type="number" name="chity-instalment" id="chit-int" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="rep-num">Recipt Number</label>
+          <input type="number" name="recipt-num" id="rep-num" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="amount">Amount</label>
+          <input type="number" name="amount" id="amount" required />
+        </div>
+        <div class="amount-wrapper">
+          <label for="bankamount">Total Bank Amount</label>
+          <input type="number" name="bank-amount" id="bankamount" required />
+        </div>
+      </div>
+      <div class="inp-wrapper2">
+        <button type="button" class="pointer" onclick="testVariable()">INSERT</button>
+      </div>
+      <div class="container2" id="output"></div>
+      <div class="inp-wrapper3">
+        <a>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <button id="submit">SAVE </button>
+        </a>
+      </div>
+      <div class="inp-wrapper4">
+        <a>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <button type="button" value="CLEAR" onclick="window.location.reload()">CLEAR</button>
+        </a>
+      </div>
+      <input type="hidden" name="timestamp" id="timestamp" />
+    </form>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwhgZCH_8UgMKeOUgq7V0tq7oBCijfnkW5bsglv6qSNrbj9OciG-_PK21nDH0mN0uYP/exec';
+
+const form = document.forms['contact-form'];
+
+document.getElementById('submit').addEventListener('click', () => {
+  // Set the timestamp value to the current date and time in the local time zone
+  document.getElementById('timestamp').value = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' });
+  // Submit the form
+  form.submit();
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => alert("Thank you! Your form is submitted successfully."))
+    .then(() => { window.location.reload(); })
+    .catch(error => console.error('Error!', error.message));
+});
+
+    // Retrieve branch information from localStorage
+    const branchName = localStorage.getItem('branchName');
+
+    if (branchName) {
+      // Display the branch name
+      document.getElementById('branchName').textContent = branchName;
+      document.getElementById('hiddenBranchName').value = branchName;
+    } else {
+      // Redirect back to login if no branch name found
+      window.location.href = 'index.html';
+    }
+
+    function testVariable() {
+      var strText = document.getElementById("cust-name").value;
+      var strText1 = document.getElementById("branchName").textContent;
+      var strText2 = document.getElementById("date-1").value;
+      var strText3 = document.getElementById("chit-num").value;
+      var strText4 = document.getElementById("amount").value;
+      var strText5 = document.getElementById("chit-int").value;
+      var strText6 = document.getElementById("bankamount").value;
+      var strText7 = document.getElementById("Deposited").value;
+      var result = 'NAME = ' + strText.toUpperCase() + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0 '
+        + ',BranchName =' + strText1 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',Date =' + strText2 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',Chitty Number =' + strText3 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',Amount =' + strText4 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',Chitty Instalment =' + strText5 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',Bank Amount =' + strText6 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  '
+        + ',deposited by =' + strText7 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0  ';
+      document.getElementById('output').textContent = result;
+    }
+
+    function logout() {
+  localStorage.clear();
+  window.location.href = 'index.html'; // Change this to the path of your login page
+}
+
+  </script>
+</body>
+</html>

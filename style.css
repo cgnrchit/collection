@@ -1,0 +1,328 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+ @import url('https://unpkg.com/css.gg@2.0.0/icons/css/home.css');
+ @media only screen and (max-width: 600px){}
+*{
+
+    font-family: 'poppins' ,sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+  }
+  body {
+    height: 100vh;
+    background-image: url("pic1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  h1 {text-align: center;
+    color: azure;
+  
+  }
+  h3 {text-align: center;
+  color: beige;
+  }
+
+
+  .container {
+    width: 90vw;
+    max-width: 70em;
+    padding: 6em 3em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 50%;
+  }
+
+  .container2 {
+    width: 90vw;
+    max-width: 70em;
+    padding: 6em 3em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 100%;
+    left: 50%;
+  }
+ 
+ 
+  .inp-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5em;
+  }
+  .inp-wrapper2 {
+    display:flex;
+    position:absolute;
+    top: 75%;
+    left: 45%;
+    justify-content:space-around;
+    gap: 0.5em;
+  }
+  .inp-wrapper3 {
+    display:flex;
+    position:absolute;
+    top: 125%;
+    left: 41%;
+    justify-content:space-around;
+    gap: 0.5em;
+  }
+  .inp-wrapper4 {
+    display:flex;
+    position:absolute;
+    top: 125%;
+    left: 52%;
+    justify-content:space-around;
+    gap: 0.5em;
+  }
+  label {
+    color: #ffffff;
+    display:flex;
+    font-weight: 400;
+  }
+
+  p {
+    color: #d0ff00;
+    display:flex;
+    font-size: 20px;
+    width: 100%;
+    height: 38px;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+  }
+
+  .amount-wrapper input,
+  .amount-wrapper p {
+    border: 1px solid #ffffff; /* You can change the color and width as needed */
+    padding: 8px; /* Optional: Adds some padding inside the border */
+    border-radius: 8px; /* Optional: Rounds the corners of the border */
+    font-weight:500;
+  }
+
+  #displayDateTime {
+    
+    font-size: 16px;
+    background: rgba(255,255,255,0.7);
+    padding: .5em;
+    align-items:baseline;
+    color: #000000;
+    border: #ffffff;
+    outline: #ffffff;
+    border-radius: 0.1em;
+    margin-top: 0.1em;
+    
+  }
+  input[type="date"] {
+    font-size: 12px;
+    width: 165px;
+    height: 40px;
+    padding: 1em;
+    color: #242831;
+    border: none;
+    outline: none;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+  }
+ 
+  ::-webkit-calendar-picker-indicator {
+    background-color: #40b880;
+    padding: 0.2em;
+    cursor: pointer;
+    border-radius: 0.1em;
+  }
+  input[type="number"] {
+    font-size: 12px;
+    width: 100%;
+    height: 38px;
+    padding: 1em;
+    color: #242831;
+    border: none;
+    outline: none;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+  }
+  input[type="text"] {
+    font-size: 12px;
+    width: 100%;
+    height: 38px;
+    padding: 1em;
+    color: #242831;
+    border: none;
+    outline: none;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+  }
+
+
+  
+  button {
+    display:block;
+    background: rgba(243, 163, 163, 0.774);
+    color: #16191e;
+    font-size: 15px;
+    margin: 1em auto 2em auto;
+    border: none;
+    padding: 0.7em 2em;
+    border-radius: 0.3em;
+    font-weight: 600;
+  }
+
+  
+  
+  #output {
+    background: rgba(250, 186, 236, 0.877);
+    text-align: center;
+    padding: 1em;
+    color: #000000;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+  }
+  #output span {
+    color: #000000;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+  #output2 {
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 1em;
+    color: #000000;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+  }
+  #output2 span {
+    color: #000000;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+  #clear {
+    
+    font-size: 16px;
+    background: rgba(252, 30, 30, 0.7);
+    padding: .5em;
+    color: #000000;
+    border: #ffffff;
+    outline: #ffffff;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    
+  }
+  @media screen and (max-width: 550px) {
+    .container {
+      bottom:0cqb;
+    }
+    .inp-wrapper {
+      flex-direction: column;
+    }
+    .date-wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+   
+   
+    .inp-wrapper3{
+     
+    
+      display:flex;
+    justify-content:start;
+    align-items:start
+
+    }
+    .inp-wrapper4{
+     
+    
+      display:flex;
+    justify-content:start;
+    align-items:start
+
+    }
+   
+
+    button{
+      position:fixed;
+      margin-top: 105%;
+      text-align:center;
+      width:40%;  
+      max-width: 100%; 
+    }
+    .clear{
+      position:fixed;
+      margin-top: 105%;
+      text-align:center;
+      width:40%;  
+      max-width: 100%; 
+    }
+
+    #output{
+      position:fixed;
+      margin-top: 80%;
+      text-align:center;
+      width:120%;  
+      max-width: 100%;
+      max-height: 100%;
+      font-size: 10px;
+    }
+
+    #output2{
+      position:fixed;
+      margin-top: 80%;
+      text-align:center;
+      width:120%;  
+      max-width: 100%;
+      max-height: 100%;
+      font-size: 10px;
+    }
+ 
+    
+  }
+  input[type=button] {
+    background-color: #51635c;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor:pointer;
+  }
+  .cont{  
+text-align: center; 
+  }
+
+  input[type="hidden"] {
+    font-size: 12px;
+    width: 165px;
+    height: 40px;
+    padding: 1em;
+    color: #002d96;
+    border: none;
+    outline: none;
+    border-radius: 0.2em;
+    margin-top: 0.6em;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+ 
+  .logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(255, 144, 144);
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    align-items: center;
+  }
+  .logout-button i {
+    margin-right: 5px;
+  }

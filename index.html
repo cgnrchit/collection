@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* General styles for the body */
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-image: url('pm1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for the login form */
+        #loginForm {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Style for the form heading */
+        #loginForm h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Style for the input fields */
+        #loginForm input[type="text"],
+        #loginForm input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Style for the submit button */
+        #loginForm input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect for the submit button */
+        #loginForm input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Additional styling for the labels */
+        #loginForm label {
+            display: block;
+            margin: 8px 0 5px;
+            font-weight: bold;
+            text-align: left;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Welcome To Chengannur Chits</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        // Sample users data
+        const users = [
+        { username: 'anchal', password:'anch',branch: 'anchal'},
+{ username: 'budhanoor', password:'budh',branch: 'budhanoor'},
+{ username: 'chengannur', password:'chen',branch: 'chengannur'},
+{ username: 'tbroad', password:'chry',branch: 'tbroad'},
+{ username: 'elavumthitta', password:'elav',branch: 'elavumthitta'},
+{ username: 'erumeli', password:'erum',branch: 'erumeli'},
+{ username: 'karakkad', password:'kara',branch: 'karakkad'},
+{ username: 'kply', password:'karu',branch: 'karunagappally'},
+{ username: 'kottukadu ', password:'kott',branch: 'kottukadu'},
+{ username: 'kurichy ', password:'kuri',branch: 'kurichy'},
+{ username: 'mararit', password:'mara',branch: 'mararithottam'},
+{ username: 'neduvathoor', password:'nedu',branch: 'neduvathoor'},
+{ username: 'padanilam ', password:'pada',branch: 'padanilam'},
+{ username: 'pallippad', password:'pall',branch: 'pallippad'},
+{ username: 'pannikkaru', password:'pann',branch: 'pannikkarukadavu'},
+{ username: 'parumala', password:'paru',branch: 'parumala'},
+{ username: 'pazhakulam ', password:'pazh',branch: 'pazhakulam'},
+{ username: 'puthen', password:'puth',branch: 'puthenchanda'},
+{ username: 'thrikkuna', password:'thri',branch: 'thrikkunnapuzha'},
+{ username: 'thevalakara', password:'thev',branch: 'thevalakara'},
+{ username: 'vazhuvadi', password:'vazh',branch: 'vazhuvadi'},
+{ username: 'cheriyanad', password:'cher',branch: 'cheriyanad'},
+{ username: 'chettikul', password:'chet',branch: 'chettikulangara'},
+{ username: 'chunakkara', password:'chun',branch: 'chunakkara'},
+{ username: 'chungapara ', password:'chun',branch: 'chungapara'},
+{ username: 'edappon ', password:'edap',branch: 'edappon'},
+{ username: 'edathitta ', password:'edat',branch: 'edathitta'},
+{ username: 'ennakkad ', password:'enna',branch: 'ennakkad'},
+{ username: 'kadapra', password:'kada',branch: 'kadapra'},
+{ username: 'kakanad ', password:'kaka',branch: 'kakanad'},
+{ username: 'kallumood ', password:'kall',branch: 'kallumood'},
+{ username: 'kangazha', password:'kang',branch: 'kangazha'},
+{ username: 'kodumon ', password:'kodu',branch: 'kodumon'},
+{ username: 'kollakadavu ', password:'koll',branch: 'kollakadavu'},
+{ username: 'konni', password:'konn',branch: 'konnimarket'},
+{ username: 'koodal ', password:'kood',branch: 'koodal'},
+{ username: 'kotta', password:'kott',branch: 'kotta'},
+{ username: 'kulanada', password:'kula',branch: 'kulanada'},
+{ username: 'kulikam', password:'kuli',branch: 'kulikampalam'},
+{ username: 'kunnamt', password:'kunn',branch: 'kunnamthanam'},
+{ username: 'kunni', password:'kunn',branch: 'kunnikkuzhy'},
+{ username: 'mannar ', password:'mann',branch: 'mannar'},
+{ username: 'nariya', password:'nari',branch: 'nariyapuram'},
+{ username: 'omalloor', password:'omal',branch: 'omalloor'},
+{ username: 'pallickal', password:'pall',branch: 'pallickal'},
+{ username: 'pandalam', password:'pand',branch: 'pandalam'},
+{ username: 'pandanad ', password:'pand',branch: 'pandanad'},
+{ username: 'perumpetty', password:'peru',branch: 'perumpetty'},
+{ username: 'punthala ', password:'punt',branch: 'punthala'},
+{ username: 'puramattom ', password:'pura',branch: 'puramattom'},
+{ username: 'sooranad ', password:'soor',branch: 'sooranad'},
+{ username: 'thattaram', password:'that',branch: 'thattarambalam'},
+{ username: 'thiruvalla ', password:'thir',branch: 'thiruvalla'},
+{ username: 'ullanadu', password:'ulla',branch: 'ullanadu'},
+{ username: 'vallakali ', password:'vall',branch: 'vallakali'},
+{ username: 'venmony ', password:'venm',branch: 'venmony'},
+{ username: 'vettiyar', password:'vett',branch: 'vettiyar'}
+
+          
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Find user with matching username and password
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                // Store branch information in localStorage
+                localStorage.setItem('branchName', user.branch);
+
+                // Redirect to branch page
+                window.location.href = 'index11.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+</html>
