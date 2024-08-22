@@ -92,7 +92,8 @@
           <button type="button" value="CLEAR" onclick="window.location.reload()">CLEAR</button>
         </a>
       </div>
-      <input type="hidden" name="timestamp" id="timestamp" />
+      <input type="hidden" name="date" id="date">
+      <input type="hidden" name="time" id="time">
     </form>
   </div>
 
@@ -103,8 +104,15 @@
 const form = document.forms['contact-form'];
 
 document.getElementById('submit').addEventListener('click', () => {
-  // Set the timestamp value to the current date and time in the local time zone
-  document.getElementById('timestamp').value = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' });
+  const currentDateTime = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' });
+
+  // Split the date and time
+  const [date, time] = currentDateTime.split(', ');
+
+  // Set the date and time separately
+  document.getElementById('date').value = date;
+  document.getElementById('time').value = time;
+
   // Submit the form
   form.submit();
 });
